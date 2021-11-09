@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DiaEditTestShow</class>
+ <widget class="QDialog" name="DiaEditTestShow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>811</width>
+    <height>606</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{font: normal 20px “微软雅黑” ;}
+
+QWidget#diaTestManager {
+	background-color: #eaeaea;
+}
+
+.QLabel {
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.QPushButton {
+	border: 1px solid;
+	background-color:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #e9e9e9,stop:1 #f2f2f3);
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.QPushButton:hover {
+    background-color: #ecf5ff;
+    color: #409eff;
+}
+
+.QPushButton:pressed, QPushButton:checked {
+    border: 1px solid #3a8ee6;
+    color: #409eff;
+}
+
+.QTableWidget{
+	color: #000000;
+	alternate-background-color: #e0e0e0;
+}
+
+.QTableWidget::item:selected {
+	color: #000000; 
+	background-color: #8fcde6;
+
+}
+
+.QComboBox {
+	background-color:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #e9e9e9,stop:1 #f2f2f3);
+  	padding: 10;
+ 	border:1px solid rgba(228,228,228,1);
+	border-radius:5px;
+}
+
+.QLineEdit {
+	border-radius:5px;
+	padding: 10;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,3">
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>测试项管理</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_Test"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_AddTest">
+          <property name="text">
+           <string>新增测试项</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_DelTest">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>删除测试项</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>是否启用</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_disTest"/>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_Add">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>&gt;&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_Del">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>&lt;&lt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidget_EnableTest"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_Apply">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>应用</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_Cancel">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>取消</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_AddTest</sender>
+   <signal>clicked()</signal>
+   <receiver>DiaEditTestShow</receiver>
+   <slot>slot_pushButton_AddTest_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>114</x>
+     <y>646</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Apply</sender>
+   <signal>clicked()</signal>
+   <receiver>DiaEditTestShow</receiver>
+   <slot>slot_pushButton_Apply_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>653</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>653</x>
+     <y>672</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Cancel</sender>
+   <signal>clicked()</signal>
+   <receiver>DiaEditTestShow</receiver>
+   <slot>slot_pushButton_Cancel_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>746</x>
+     <y>579</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>748</x>
+     <y>689</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Del</sender>
+   <signal>clicked()</signal>
+   <receiver>DiaEditTestShow</receiver>
+   <slot>slot_pushButton_Del_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>516</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>522</x>
+     <y>672</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Add</sender>
+   <signal>clicked()</signal>
+   <receiver>DiaEditTestShow</receiver>
+   <slot>slot_pushButton_Add_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>508</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>505</x>
+     <y>703</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget_Test</sender>
+   <signal>itemClicked(QTableWidgetItem*)</signal>
+   <receiver>DiaEditTestShow</receiver>
+   <slot>slot_tableWidget_Test_itemClicked(QTableWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>61</x>
+     <y>381</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>53</x>
+     <y>693</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_DelTest</sender>
+   <signal>clicked()</signal>
+   <receiver>DiaEditTestShow</receiver>
+   <slot>slot_pushButton_DelTest_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>523</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>165</x>
+     <y>660</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slot_pushButton_AddTest_clicked()</slot>
+  <slot>slot_pushButton_DelTest_clicked()</slot>
+  <slot>slot_pushButton_Apply_clicked()</slot>
+  <slot>slot_pushButton_Cancel_clicked()</slot>
+  <slot>slot_pushButton_Add_clicked()</slot>
+  <slot>slot_pushButton_Del_clicked()</slot>
+  <slot>slot_tableWidget_Test_itemClicked(QTableWidgetItem*)</slot>
+ </slots>
+</ui>
